@@ -1,0 +1,32 @@
+.categories-container {
+	padding: 10px;
+	overflow: hidden;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	align-content: center;
+	grid-auto-rows: minmax(40vh, auto);
+	gap: 10px;
+	.grid-item-1 {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	.grid-item-2 {
+		grid-column-start: 3;
+		grid-column-end: 5;
+	}
+	.grid-item-3 {
+		grid-column-start: 5;
+		grid-column-end: 7;
+	}
+	.grid-item-4 {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	.grid-item-5 {
+		grid-column-start: 4;
+		grid-column-end: 7;
+	}
+}
