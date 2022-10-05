@@ -20,7 +20,7 @@ const Navigation = () => {
 					</Link>
 					<Link
 						className='nav-link'
-						to='/sign-in'>
+						to='/auth'>
 						<p>Sign In</p>
 					</Link>
 					<Link

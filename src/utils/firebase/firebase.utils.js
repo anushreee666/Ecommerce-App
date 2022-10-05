@@ -2,16 +2,13 @@ import { initializeApp } from "firebase/app";
 import {
 	getAuth,
 	signInWithPopup,
-	signInWithRedirect,
 	GoogleAuthProvider,
+	signInWithEmailAndPassword,
+	createUserWithEmailAndPassword,
 } from "firebase/auth";
-import {
-	getFirestore,
-	getDoc,
-	setDoc,
-	doc,
-	Firestore,
-} from "firebase/firestore";
+import { getFirestore, getDoc, setDoc, doc } from "firebase/firestore";
+
+// Initialize Firebase
 const firebaseConfig = {
 	apiKey: "AIzaSyC-3WZrHNVHwbddOUxTRHs2fT3jrTsOpzQ",
 	authDomain: "ecommerce-app-55a91.firebaseapp.com",
@@ -20,39 +17,52 @@ const firebaseConfig = {
 	messagingSenderId: "416534246178",
 	appId: "1:416534246178:web:fe0a0221cb8a8e135beb7b",
 };
-
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({ prompt: "select_account" });
-
 export const auth = getAuth(app);
-export const signInWithGooglePopup = () => {
-	return signInWithPopup(auth, provider);
+
+//Sign Up
+
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
+	if (!email || !password) return;
+	return await createUserWithEmailAndPassword(auth, email, password);
 };
 
-//Initializing db
-
+// adding user in Database
 export const db = getFirestore();
-export const createUserDocumentFromAuth = async (userAuth) => {
+export const createUserDocumentFromAuth = async (userAuth, additionalInfo) => {
 	const userDocRef = doc(db, "users", userAuth.uid);
 	const userSnapshot = await getDoc(userDocRef);
-	console.log("userAuth", userAuth);
-	console.log("userDocRef", userDocRef);
-	console.log("userSnapshot", userSnapshot);
-	console.log(userSnapshot.exists());
 
 	if (!userSnapshot.exists()) {
 		const { displayName, email } = userAuth;
 		const createdAt = new Date();
 
 		try {
-			await setDoc(userDocRef, { displayName, email, createdAt });
+			await setDoc(userDocRef, {
+				displayName,
+				email,
+				createdAt,
+				...additionalInfo,
+			});
 		} catch (e) {
 			console.log("error", e.message);
 		}
 	}
 
 	return userDocRef;
+};
+
+//Sign In
+//with email
+export const signInWithEmailPass = async (email, password) => {
+	if (!email || !password) return;
+	return await signInWithEmailAndPassword(auth, email, password);
+};
+
+//with google provider
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: "select_account" });
+
+export const signInWithGooglePopup = () => {
+	return signInWithPopup(auth, googleProvider);
 };

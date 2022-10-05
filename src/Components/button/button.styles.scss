@@ -1,0 +1,39 @@
+.button-style {
+	background-color: rgb(58, 58, 58);
+	border-color: rgb(58, 58, 58);
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	width: 45%;
+
+	border-radius: 5px;
+}
+.button-style:hover {
+	background-color: white;
+	border-color: rgb(58, 58, 58);
+	color: rgb(58, 58, 58);
+	cursor: pointer;
+}
+.google {
+	background-color: #4caf50;
+	border: none;
+}
+.google:hover {
+	background-color: #4caf50;
+	color: white;
+	cursor: pointer;
+}
+.inverted {
+	background-color: white;
+	border-color: rgb(58, 58, 58);
+	color: rgb(58, 58, 58);
+}
+.inverted:hover {
+	background-color: rgb(58, 58, 58);
+	border-color: rgb(58, 58, 58);
+	color: white;
+	cursor: pointer;
+}
