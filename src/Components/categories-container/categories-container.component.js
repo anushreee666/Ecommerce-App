@@ -1,6 +1,6 @@
+import CategoryBox from "../category/category.component";
 import "../category/category.component";
 import "./categories-container.styles.scss";
-import CategoryBox from "../category/category.component";
 
 const CategoriesContainer = ({ categories }) => {
 	return (

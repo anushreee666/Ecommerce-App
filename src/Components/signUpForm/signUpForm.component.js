@@ -1,11 +1,12 @@
 import { useState } from "react";
+import InputField from "../inputField/inputField.component";
+import Button from "../button/button.component";
 import {
 	createAuthUserWithEmailAndPassword,
 	createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
-import InputField from "../inputField/inputField.component";
-import Button from "../button/button.component";
 import "./signUpForm.styles.scss";
+
 const defaultFormField = {
 	name: "",
 	email: "",
@@ -31,16 +32,15 @@ const SignUpForm = () => {
 		event.preventDefault();
 		try {
 			if (password === confirmPassword) {
-				const response = await createAuthUserWithEmailAndPassword(
-					email,
-					password
-				);
-				console.log("response", response);
-				if (response) {
-					const user = await createUserDocumentFromAuth(response.user, {
+				const user = await createAuthUserWithEmailAndPassword(email, password);
+
+				console.log("response", user);
+				if (user) {
+					await createUserDocumentFromAuth(user.user, {
 						displayName: name,
 					});
 					// console.log("user after creation", user);
+
 					resetForm();
 				}
 			} else {

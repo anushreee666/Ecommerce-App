@@ -1,6 +1,5 @@
 import "./category.styles.scss";
 const CategoryBox = ({ className, imageUrlhere, name }) => {
-	console.log("here", className, imageUrlhere, name);
 	return (
 		<div className={`category-box  ${className}`}>
 			<div

@@ -1,0 +1,14 @@
+.shopping-cart-container {
+	height: 50px;
+	width: 50px;
+
+	.shopping-cart {
+		height: 40px;
+		width: 40px;
+	}
+
+	.shopping-cart-count {
+		position: absolute;
+		margin: 12px 0px 0px 15px;
+	}
+}
