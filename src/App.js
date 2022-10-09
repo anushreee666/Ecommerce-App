@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Navigation from "./routes/navigation/navigation.component";
 import Shop from "./routes/shop/shop.component";
 import Authentication from "./routes/authentication/authentication.component";
+import Checkout from "./routes/checkout/checkout.component";
 
 const App = () => {
 	return (
@@ -22,6 +23,10 @@ const App = () => {
 				<Route
 					path='auth'
 					element={<Authentication />}
+				/>
+				<Route
+					path='checkout'
+					element={<Checkout />}
 				/>
 			</Route>
 		</Routes>

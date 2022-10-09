@@ -11,6 +11,7 @@ const Shop = () => {
 					return (
 						<ProductCard
 							className='product-card'
+							id={id}
 							key={id}
 							name={name}
 							price={price}

@@ -12,7 +12,7 @@ const CategoriesContainer = ({ categories }) => {
 					<CategoryBox
 						className={categoryBoxClassName}
 						name={title}
-						imageUrlhere={imageUrl}
+						imageUrl={imageUrl}
 						key={id}></CategoryBox>
 				);
 			})}
