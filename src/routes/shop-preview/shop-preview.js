@@ -5,13 +5,13 @@ import ProductCard from "../../Components/productCard/productCard.component";
 import "./shop-preview.scss";
 const ShopPreview = () => {
 	const { categoriesMap } = useContext(CategoriesContext);
-	console.log(categoriesMap);
+
 	const navigate = useNavigate();
 
 	return (
 		<Fragment>
 			{Object.keys(categoriesMap).map((title) => (
-				<Fragment>
+				<Fragment key={title}>
 					<h2 className='title'>
 						<span
 							onClick={() => {

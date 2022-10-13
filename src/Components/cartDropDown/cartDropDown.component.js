@@ -13,6 +13,7 @@ const CartDropDown = () => {
 	};
 	return (
 		<div className='cart-dropdown-container'>
+			{cartItems.length ? "" : <span>Cart is Empty</span>}
 			<div className='cart-items'>
 				{cartItems.map((item) => {
 					const { id, name, price, imageUrl, quantity } = item;

@@ -69,7 +69,7 @@ export const CartProvider = ({ children }) => {
 		//existing item
 		const existingItem = cartItems.find((item) => removeItem.id === item.id);
 		//if 1
-		console.log(existingItem, removeItem);
+
 		if (existingItem.quantity === 1 || discard) {
 			return cartItems.filter((item) => item.id !== existingItem.id);
 		}

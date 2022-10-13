@@ -21,8 +21,7 @@ const SignInForm = () => {
 	};
 
 	const OnClickWithGoogle = async () => {
-		const output = await signInWithGooglePopup();
-		console.log("output", output);
+		await signInWithGooglePopup();
 	};
 
 	const handleChange = (event) => {
@@ -32,8 +31,7 @@ const SignInForm = () => {
 	const handelFormSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			const { user } = await signInWithEmailPass(email, password);
-			console.log("Sign In user", user);
+			await signInWithEmailPass(email, password);
 
 			resetForm();
 		} catch (e) {

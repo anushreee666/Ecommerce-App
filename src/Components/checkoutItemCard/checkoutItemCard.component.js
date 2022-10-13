@@ -3,7 +3,7 @@ import { CartContext } from "../../contexts/cart.context";
 
 import "./checkoutItemCard.component.scss";
 const CheckoutItemCard = (cartItem) => {
-	const { id, name, price, imageUrl, quantity } = cartItem;
+	const { name, price, imageUrl, quantity } = cartItem;
 	const { addCartItems, removeCartItems } = useContext(CartContext);
 	const decrement = () => removeCartItems(cartItem);
 	const increment = () => addCartItems(cartItem);

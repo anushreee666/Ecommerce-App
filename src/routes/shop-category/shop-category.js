@@ -10,7 +10,6 @@ const ShopCategory = () => {
 	useEffect(() => {
 		setProducts(categoriesMap[category]);
 	}, [category, categoriesMap]);
-	console.log(product);
 
 	return (
 		<div>

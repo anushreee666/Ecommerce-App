@@ -34,7 +34,6 @@ const SignUpForm = () => {
 			if (password === confirmPassword) {
 				const user = await createAuthUserWithEmailAndPassword(email, password);
 
-				console.log("response", user);
 				if (user) {
 					await createUserDocumentFromAuth(user.user, {
 						displayName: name,

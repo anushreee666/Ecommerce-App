@@ -15,11 +15,11 @@ const CartIcon = () => {
 		}
 	};
 	return (
-		<div
-			className='shopping-cart-container'
-			onClick={toggleCartClick}>
+		<div className='shopping-cart-container'>
 			<span className='shopping-cart-count'>{totalItems}</span>
-			<ShoppingCart className='shopping-cart'></ShoppingCart>
+			<ShoppingCart
+				onClick={toggleCartClick}
+				className='shopping-cart'></ShoppingCart>
 		</div>
 	);
 };

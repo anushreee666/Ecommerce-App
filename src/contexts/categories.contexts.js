@@ -4,7 +4,7 @@ import { createContext, useState, useEffect } from "react";
 // 	createUserDocumentFromAuth,
 // } from "../utils/firebase/firebase.utils";
 
-import SHOP_DATA from "../shop-data";
+// import SHOP_DATA from "../shop-data";
 import { getCategoriesAndDocuments } from "../utils/firebase/firebase.utils";
 
 //value we want to access
@@ -25,16 +25,6 @@ export const CategoriesProvider = ({ children }) => {
 		getCatergoriesMap();
 	}, []);
 
-	// useEffect(() => {
-	// 	// const unsubscribe = onAuthStateChangedListner((user) => {
-	// 	// 	setCurrentUser(user);
-	// 	// 	if (user) {
-	// 	// 		createUserDocumentFromAuth(user);
-	// 	// 	}
-	// 		console.log("issser", user);
-	// 	});
-
-	// }, []);
 	return (
 		<CategoriesContext.Provider value={value}>
 			{children}
